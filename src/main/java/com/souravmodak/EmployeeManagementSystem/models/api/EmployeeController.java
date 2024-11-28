@@ -66,6 +66,44 @@ public class EmployeeController {
         return "list-employees";
     }
 
+    @GetMapping("update/{id}")
+    public String showUpdateEmployeePage(@PathVariable("id") int id, Model model) {
+        // Find the employee to update
+        Employee employee = employeeList.stream()
+                .filter(emp -> emp.getId() == id)
+                .findFirst()
+                .orElse(null);
+
+        if (employee == null) {
+            return "redirect:/employees/";
+        }
+
+        model.addAttribute("employee", employee);
+        return "update-employees";
+    }
+
+    @PostMapping("update")
+    public String updateEmployees(@RequestParam("id") int id,
+                                 @RequestParam("name") String name,
+                                 @RequestParam("department") String department,
+                                 @RequestParam("email") String email,
+                                 @RequestParam("salary") Double salary,
+                                 Model model) {
+        // Find the employee and update details
+        for (Employee employee : employeeList) {
+            if (employee.getId() == id) {
+                employee.setName(name);
+                employee.setDepartment(department);
+                employee.setEmail(email);
+                employee.setSalary(salary);
+                break;
+            }
+        }
+
+        model.addAttribute("employees", employeeList);
+        return "list-employees";
+    }
+
     @GetMapping("delete/{id}")
     public String deleteEmployees(@PathVariable("id") int id, Model model)
     {

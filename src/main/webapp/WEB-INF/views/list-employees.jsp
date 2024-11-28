@@ -29,7 +29,9 @@
                         <td>${employee.department}</td>
                         <td>${employee.email}</td>
                         <td>${employee.salary}</td>
+
                         <td>
+                           <a href="/employees/update/${employee.id}">Update</a> |
                             <a href="/employees/delete/${employee.id}" onclick="return confirm('Are you sure you want to delete this employee?');">
                             Delete</a>
                         </td>
