@@ -22,9 +22,9 @@ public class EmployeeController {
     public EmployeeController()
     {
         employeeList = new ArrayList<>();
-        employeeList.add(new Employee(1, "Alice", "HR", "alice@example.com", 50000));
-        employeeList.add(new Employee(2, "Bob", "Engineering", "bob@example.com", 60000));
-        employeeList.add(new Employee(3, "Charlie", "Finance", "charlie@example.com", 55000));
+        employeeList.add(new Employee(1, "Tisha", "HR", "tisha@gmail.com", 50000));
+        employeeList.add(new Employee(2, "Sourav", "Engineering", "bob@gmail.com", 60000));
+        employeeList.add(new Employee(3, "Bhavdeep", "Finance", "charlie@gmail.com", 55000));
     }
 
     @GetMapping("/")

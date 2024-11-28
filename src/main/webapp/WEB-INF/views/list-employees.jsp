@@ -37,6 +37,7 @@
                 </c:forEach>
             </tbody>
         </table>
+            <a class="btn btn-secondary mt-3" href="/employees/">Home</a>
             <a class="btn btn-secondary mt-3" href="/employees/add">Add Employee</a>
             <a class="btn btn-secondary mt-3" href="/employees/search">Search employees</a>
     </div>
